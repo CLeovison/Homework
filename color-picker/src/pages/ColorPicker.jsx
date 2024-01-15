@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styles from "../styles/ColorPicker.module.css";
 export default function ColorPicker({ selected }) {
-  const [color, setColor] = useState("#FFFFFF");
+  const [color, setColor] = useState("#000000");
 
   //In the Function i need to input the variable that need to be set inorder to set the Value that has been needed
   function handleColor(event) {
@@ -15,14 +15,16 @@ export default function ColorPicker({ selected }) {
       <div className={styles.maincontent}>
         <h1 className={styles.header}>Color Picker</h1>
 
-        <p >qweqwewq</p>
+        <p style={{color:color}}>Selected Color: {color}</p>
         <form action="">
           <label htmlFor="color">
-            Select A Color:
+            Choose A Color:
             <input
               type="color"
               id="color"
-              value={color}
+              value={color} 
+
+              //Whenever i set something i need to have a function and an onchange inorder handle the changes that has been put
               onChange={handleColor}
             />
           </label>
