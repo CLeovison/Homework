@@ -2,14 +2,12 @@ import React, { useState, useEffect } from "react";
 import ColorPicker from "./ColorPicker";
 
 export default function ColorDisplay() {
- 
-
-  return (
-    <>
+  const [dispColor,setDispColor] = useState('#000000');
 
   
-      <ColorPicker />
-     
+  return (
+    <>
+      <ColorPicker update={dispColor}/>
     </>
   );
 }
