@@ -7,10 +7,11 @@ export default function ColorPicker({ selected, update }) {
   function handleColor(event) {
     //Inorder to be pass the value that the setColor needs -
     //- i need to put a parameter and the target value inorder to execute the data that has been needed
-    update(event.target.value);
+    setColor(event.target.value);
   }
   function handleSubmit(e){
     e.preventDefault();
+    setColor(e.target.value);
   }
   return (
     <>

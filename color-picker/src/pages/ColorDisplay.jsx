@@ -7,7 +7,7 @@ export default function ColorDisplay() {
   
   return (
     <>
-      <ColorPicker update={dispColor}/>
+      <ColorPicker update={setDispColor}/>
     </>
   );
 }
