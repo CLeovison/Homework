@@ -1,13 +1,16 @@
-import React, { useState, useEffect } from "react";
-import ColorPicker from "./ColorPicker";
+import React from "react";
 
-export default function ColorDisplay() {
-  const [dispColor,setDispColor] = useState('#000000');
+export default function ColorDisplay({ color }) {
 
+  const colorDisplayStyle = {
+    width: '100px',
+    height: '100px',
+    backgroundColor: color,
+    border: '1px solid black',
+    margin: '10px',
+  }
   
   return (
-    <>
-      <ColorPicker update={dispColor} submit={setDispColor}/>
-    </>
+    <div style={colorDisplayStyle}></div>
   );
 }
