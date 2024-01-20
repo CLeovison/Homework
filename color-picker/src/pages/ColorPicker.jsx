@@ -1,11 +1,28 @@
 import React, { useState, useEffect } from "react";
 import styles from "../styles/ColorPicker.module.css";
 export default function ColorPicker({ selected, update,submit }) {
-  const [color, setColor] = useState("#000000");
-  const [value, setValue] = useState(" ");
+  
+  const [value, setValue] = useState(() => {
+    try {
+      const colorPicks = localStorage.getItem("todos");
+      return colorPicks? JSON.parse(colorPicks) : [];
+    } catch (error) {
+      console.error("Error reading from local storage", error);
+      return [];
+    }
+  });
   //In the Function i need to input the variable that need to be set inorder to set the Value that has been needed
 
- 
+  useEffect(() =>{
+    const colorPicks = localStorage.getItem("display");
+    if (colorPicks) {
+      setValue(JSON.parse(colorPicks));
+    }
+  }, [])
+
+  useEffect(() => {
+    localStorage.setItem("display", JSON.stringify(value));
+  }, [value]);
   return (
     <>
       <div className={styles.maincontent}>
