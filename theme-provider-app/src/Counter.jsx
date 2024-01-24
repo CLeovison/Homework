@@ -6,7 +6,7 @@ export const Counter = () => {
     <div>
       <button onClick={() => setCount(count - 1)}>Decrease</button>
       <span>{count}</span>
-      <button onClick={() => setCount(count - 1)}>Increase</button>
+      <button onClick={() => setCount(count + 1)}>Increase</button>
     </div>
   )
 }
